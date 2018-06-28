@@ -30,9 +30,14 @@
   <title>Was Blue. | A Personal Site.</title>
 </head>
 
-<body>
+<body id="body">
   <noscript>
     You need to enable JavaScript to run this app.
+    <style>
+    body {
+      opacity: 1;
+    }
+    </style>
   </noscript>
   <header>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 329" class="bg-img">
@@ -52,9 +57,13 @@
     <a href="https://github.com/Horizon-Blue" class="nav-entry">GitHub</a>
   </nav>
   <script>
+  window.addEventListener("load", function(event) {
+    // Make the page visible
+    document.getElementById('body').style.opacity = 1;
+
     // replace each word in title by span
     var title = document.getElementById("title");
-    title.innerHTML = title.textContent.split('').map(function(c) {return `<span class="title-char">${c}</span>`;}).join('');
+    title.innerHTML = title.textContent.split('').map(function(c) { return `<span class="title-char">${c}</span>`; }).join('');
 
     anime.timeline()
       .add({
@@ -87,6 +96,7 @@
           return i * 30;
         }
       });
+  });
   </script>
 </body>
 
