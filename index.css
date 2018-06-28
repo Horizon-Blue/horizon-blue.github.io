@@ -1,3 +1,36 @@
+body {
+    font-family: Raleway, Helvetica, Arial, Sans-Serif;
+}
+
+header {
+    position: relative;
+    width: 100vw;
+    height: calc(41.125vw + 8vh);
+}
+
 .bg-img {
     width: 100%;
+}
+
+#title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    bottom: 0;
+}
+
+.title-char {
+    opacity: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop */
+    header {
+        height: 41.125vw;
+    }
+
+    #title {
+        bottom: 4vh;
+    }
 }
