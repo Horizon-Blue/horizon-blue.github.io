@@ -63,8 +63,9 @@
   </nav>
 
   <footer>
-    <div>&copy; HorizonBlue, <span id="year"></span>.</div>
+    <div>&copy; HorizonBlue, <span id="year">2018</span>.</div>
   </footer>
+
   <script>
   window.addEventListener("load", function(event) {
     // Make the page visible
@@ -110,6 +111,25 @@
         translateY: ["3vh", 0],
         offset: 500,
         color: ['#00ffff', 'rgba(90, 110, 150, 0.8)'],
+        duration: 800,
+      })
+      .add({
+        targets: '.nav-entry a',
+        opacity: [0, 1],
+        translateY: ["-5vh", 0],
+        offset: 500,
+        color: ['#00ffff', '#000000'],
+        duration: 800,
+        delay: function(el, i, l) {
+          return i * 80;
+        }
+      })
+      .add({
+        targets: 'footer',
+        opacity: [0, 1],
+        translateY: ["-3vh", 0],
+        offset: 500,
+        color: ['#00ffff', '#000000'],
         duration: 800,
       });
   });
