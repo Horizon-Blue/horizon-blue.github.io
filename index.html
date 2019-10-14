@@ -11,7 +11,6 @@
 
     gtag('config', 'UA-71234164-4');
   </script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
@@ -28,16 +27,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <!-- For Anime.js -->
   <script src="lib/anime.min.js"></script>
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-  <title>Realm of Horizon. | A Personal Site.</title>
+  <title>Realm of Horizon.</title>
 </head>
 
 <body id="body">
@@ -73,16 +63,13 @@
   </nav>
 
   <footer>
-    <div>&copy; HorizonBlue, <span id="year">2018</span>.</div>
+    <div>&copy; HorizonBlue, <span id="year">2015</span>.</div>
   </footer>
-
   <script>
   window.addEventListener("load", function(event) {
     // Make the page visible
     document.getElementById('body').style.opacity = 1;
 
-    // Insert current year
-    document.getElementById("year").innerHTML = (new Date()).getFullYear();
 
     // replace each word in title by span
     var title = document.getElementById("title");
@@ -141,6 +128,15 @@
         offset: 500,
         color: ['#00ffff', '#000000'],
         duration: 800,
+      })
+      // gradually increase to current year
+      .add({
+        targets: "#year",
+        innerHTML: [2015, (new Date()).getFullYear()],
+        round: 1,
+        easing: "easeOutQuart",
+        offset: 800,
+        duration: 2000,
       });
   });
   </script>
