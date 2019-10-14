@@ -1,4 +1,4 @@
-# was.blue
+# horizonian.com
 
 ![icon](./favicon.png)
 
